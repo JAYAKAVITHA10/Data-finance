@@ -7,8 +7,8 @@ import Triple from "../assets/triple.png";
 const Cards = () => {
   const navigate = useNavigate();
 
-  const handleStartTrial = () => {
-    navigate("/payment");
+  const handleStartTrial = (plan) => {
+    navigate("/payment", { state: { plan } });
   };
 
   return (
@@ -29,7 +29,7 @@ const Cards = () => {
           </div>
           <button
             className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3"
-            onClick={handleStartTrial}
+            onClick={() => handleStartTrial("single")}
           >
             Start Trial
           </button>
@@ -49,11 +49,12 @@ const Cards = () => {
           </div>
           <button
             className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3"
-            onClick={handleStartTrial}
+            onClick={() => handleStartTrial("double")}
           >
             Start Trial
           </button>
         </div>
+
         <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
           <img
             className="w-20 mx-auto mt-[-3rem] bg-white"
@@ -69,7 +70,7 @@ const Cards = () => {
           </div>
           <button
             className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3"
-            onClick={handleStartTrial}
+            onClick={() => handleStartTrial("triple")}
           >
             Start Trial
           </button>

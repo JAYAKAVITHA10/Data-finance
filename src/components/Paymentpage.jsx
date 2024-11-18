@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const PaymentPage = () => {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     cardNumber: "",
     expiryDate: "",
     cvv: "",
   });
   const [plan, setPlan] = useState("single");
+
+  useEffect(() => {
+    if (location.state?.plan) {
+      setPlan(location.state.plan);
+    }
+  }, [location]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
