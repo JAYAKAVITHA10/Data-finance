@@ -12,10 +12,8 @@ const Analytics = () => {
             Manage Data Analytics Centrally
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            molestiae delectus culpa hic assumenda, voluptate reprehenderit
-            dolore autem cum ullam sed odit perspiciatis. Doloribus quos velit,
-            eveniet ex deserunt fuga?
+            A budget tells us what we can't afford, but it doesn't keep us from
+            buying it.
           </p>
           <button className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
             Get Started
