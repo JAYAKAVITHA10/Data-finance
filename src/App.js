@@ -8,37 +8,41 @@ import Navbar from "./components/Navbar";
 import Newsletter from "./components/Newsletter";
 import PaymentPage from "./components/Paymentpage";
 
+const MainLayout = ({ children }) => (
+  <>
+    <Navbar />
+    {children}
+  </>
+);
+
 function App() {
   return (
     <Router>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <section id="home">
-                  <Hero />
-                </section>
-                <section id="company">
-                  <Analytics />
-                </section>
-                <section id="resources">
-                  <Newsletter />
-                </section>
-                <section id="about">
-                  <Cards />
-                </section>
-                <section id="contact">
-                  <Footer />
-                </section>
-              </>
-            }
-          />
-          <Route path="/payment" element={<PaymentPage />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <section id="home">
+                <Hero />
+              </section>
+              <section id="company">
+                <Analytics />
+              </section>
+              <section id="resources">
+                <Newsletter />
+              </section>
+              <section id="about">
+                <Cards />
+              </section>
+              <section id="contact">
+                <Footer />
+              </section>
+            </MainLayout>
+          }
+        />
+        <Route path="/payment" element={<PaymentPage />} />
+      </Routes>
     </Router>
   );
 }
